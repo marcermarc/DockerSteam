@@ -1,4 +1,4 @@
-FROM marcermarc/steam:latest
+FROM marcermarc/steamcmd:latest
 
 LABEL maintainer "docker@marcermarc.de"
 
