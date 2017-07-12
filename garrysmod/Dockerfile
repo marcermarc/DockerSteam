@@ -48,4 +48,4 @@ ENV GAMEMODE=terrortown \
 EXPOSE 27015:27015/tcp 27015:27015/udp
 
 WORKDIR /steam/gmod
-ENTRYPOINT ./srcds_run -game garrysmod -nohltv -norestart +gamemode $GAME -maxplayers $PLAYER +map $MAP -authkey AUTHKEY +host_workshop_collection $WORKSHOPCOLLECTION
+ENTRYPOINT ./srcds_run -game garrysmod -nohltv -norestart +gamemode $GAME -maxplayers $PLAYER +map $MAP -authkey $AUTHKEY +host_workshop_collection $WORKSHOPCOLLECTION
