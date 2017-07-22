@@ -47,8 +47,8 @@ ENV GAMEMODE=terrortown \
 # * the data folder (used by some addons)
 # * the cache of workshop-downloads
 # ---------------------------------------
-VOLUME /steam/gmod/garrysmod/cfg/server.cfg \
-       /steam/gmod/garrysmod/data/ \
+# mount yourself: /steam/gmod/garrysmod/cfg/server.cfg \
+VOLUME /steam/gmod/garrysmod/data/ \
        /steam/gmod/garrysmod/cache/srcds/
 
 # -----------------------------------
