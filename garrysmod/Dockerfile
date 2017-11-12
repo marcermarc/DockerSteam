@@ -44,13 +44,9 @@ VOLUME /steam/gmod/garrysmod/data/ \
 EXPOSE 27015:27015/tcp 27015:27015/udp
 
 WORKDIR /steam/gmod
-<<<<<<< HEAD
 ENTRYPOINT ["./srcds_run", "-game", "garrysmod", "-nohltv", "-norestart"]
 
 # ---------------------------------------------------------------------
 # change the command to change parameters and set a workshop-collection
 # ---------------------------------------------------------------------
 CMD ["+gamemode", "terrortown", "-maxplayers", "32", "+map", "gm_construct"]
-=======
-ENTRYPOINT ["./srcds_run", "-game", "garrysmod", "-nohltv", "-norestart", "+gamemode", "$GAMEMODE", "-maxplayers", "$PLAYER", "+map", "$MAP", "-authkey", "$AUTHKEY", "+host_workshop_collection", "$WORKSHOPCOLLECTION"]
->>>>>>> f8ef15e78258bd4b0bafd2c84a2d4a4ce183355d
