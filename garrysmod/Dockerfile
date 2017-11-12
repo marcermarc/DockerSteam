@@ -28,19 +28,6 @@ RUN apt-get update \
 # -----------------------------------------------
 USER steam
 
-# ----------------------------------------------------------
-# variables:
-# * GAMEMODE: change the gamemode
-# * PLAYER: maximum player on the server
-# * MAP: select the map at the start of the server
-# * AUTHKEY and WORKSHOPCOLLECTION: for workshop-collections
-# ----------------------------------------------------------
-ENV GAMEMODE=terrortown \
-    PLAYER=32 \
-    MAP=gm_construct \
-    AUTHKEY= \
-    WORKSHOPCOLLECTION=
-
 # ---------------------------------------
 # volumes:
 # * the server-configuration
@@ -57,4 +44,9 @@ VOLUME /steam/gmod/garrysmod/cfg/server.cfg \
 EXPOSE 27015:27015/tcp 27015:27015/udp
 
 WORKDIR /steam/gmod
-ENTRYPOINT ["./srcds_run", "-game", "garrysmod", "-nohltv", "-norestart", "+gamemode", "$GAMEMODE", "-maxplayers", "$PLAYER", "+map", "$MAP", "-authkey", "$AUTHKEY", "+host_workshop_collection", "$WORKSHOPCOLLECTION"]
+ENTRYPOINT ["./srcds_run", "-game", "garrysmod", "-nohltv", "-norestart"]
+
+# ---------------------------------------------------------------------
+# change the command to change parameters and set a workshop-collection
+# ---------------------------------------------------------------------
+CMD ["+gamemode", "terrortown", "-maxplayers", "32", "+map", "gm_construct"]
